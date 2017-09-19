@@ -38,7 +38,7 @@ module.exports = {
 	},
 	watch: NODE_ENV == 'development',
 	devtool: 'source-map',
-	plugins: [
+  plugins: [
 		new ExtractTextPlugin("styles.css")
-	]
+  ]
 }
