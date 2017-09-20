@@ -30,15 +30,22 @@ module.exports = {
 			{
 				test: /\.less$/,
 				loader: ExtractTextPlugin.extract('css-loader!less-loader')
+			},
+			{
+				test: /\.(png|svg|gif)$/,
+				loader: 'url-loader'
 			}
 		]
 	},
 	resolve: {
-		modules: ["node_modules"]
+		modules: [
+			"node_modules",
+			path.resolve(__dirname, 'src/images')
+		]
 	},
 	watch: NODE_ENV == 'development',
 	devtool: 'source-map',
-  plugins: [
+	plugins: [
 		new ExtractTextPlugin("styles.css")
-  ]
+	]
 }

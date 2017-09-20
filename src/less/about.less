@@ -1,0 +1,33 @@
+@about-img-size: 5em;
+
+.about {
+	&--img {
+		float: left;
+		width: @about-img-size;
+		height: @about-img-size;
+		
+		&-none {
+			position: relative;
+			overflow: hidden;
+			border-radius: 50%;
+			padding: 0.5em;
+			border: 3px solid @second-color;
+
+			&::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 48%;
+				height: 100%;
+				width: 3px;
+				background-color: @second-color;
+				transform-origin: 50% 50%;
+				transform: rotate(37deg);
+			}
+		}
+	}
+
+	&--text {
+		margin-left: 6em;
+	}
+}
