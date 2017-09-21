@@ -20,6 +20,23 @@ class Nav extends Component {
 		}, speed)
 	}
 
+	handleClick() {
+		var http = new XMLHttpRequest();
+		var url = "/hello";
+		var params = {"email": "hey@mail.com", "password": "101010"};
+		http.open("POST", url, true);
+
+		//Send the proper header information along with the request
+		http.setRequestHeader("Content-type", "application/json");
+
+		http.onreadystatechange = function() {//Call a function when the state changes.
+			if(http.readyState == 4 && http.status == 200) {
+				alert(http.responseText);
+			}
+		}
+		http.send(JSON.stringify(params));
+	}
+
 	render() {
 		return(
 			<nav id='navbar' className='navbar navbar-expand-lg navbar-light bg-light fixed-top'>
@@ -43,6 +60,7 @@ class Nav extends Component {
 							})
 						}
 					</ul>
+					<button onClick={ this.handleClick }>Take order</button>
 				</div>
 			</nav>
 		)
