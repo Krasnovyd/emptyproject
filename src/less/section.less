@@ -1,10 +1,8 @@
 section {
 	height: 800px;
 	border: 1px solid black;
-}
 
-.flame {
-	width: 100px;
-	height: 100px;
-	background-color: red;
+	&:nth-of-type(odd) {
+		background-color: @first-color;
+	}
 }

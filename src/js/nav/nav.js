@@ -61,6 +61,9 @@ class Nav extends Component {
 						}
 					</ul>
 					<button onClick={ this.handleClick }>Take order</button>
+					<button type='button' className='btn btn-primary' data-toggle='modal' data-target='#order'>
+						Launch demo modal
+					</button>
 				</div>
 			</nav>
 		)

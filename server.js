@@ -1,6 +1,6 @@
 var express = require("express");
 var bodyParser = require('body-parser');
-var mailer = require('./mailer');
+var mailer = require('./modules/mailer');
 
 var app = express();
 var port = process.env.PORT || 3000;
@@ -11,7 +11,7 @@ app.listen(port, function() {
 
 /* serves main page */
 app.get("/", function(req, res) {
-	res.sendfile('src/index.html')
+	res.sendfile( __dirname + '/src/index.html')
 });
 
 app.use(bodyParser.json());
