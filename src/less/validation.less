@@ -1,0 +1,21 @@
+.validation-error{
+	&--message{
+		display: none;
+		width: 100%;
+		color: @validation-color;
+	}
+	
+	.validation-error--message{
+		display: block;
+	}
+
+	label{
+		color: @validation-color;
+	}
+	
+	.Select-control,
+	.btn,
+	input{
+		border-color: @validation-color;
+	}
+}

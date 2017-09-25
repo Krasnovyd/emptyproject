@@ -40,7 +40,8 @@ module.exports = {
 	resolve: {
 		modules: [
 			"node_modules",
-			path.resolve(__dirname, 'src/images')
+			path.resolve(__dirname, 'src/images'),
+			path.resolve(__dirname, 'src/js/utils')
 		]
 	},
 	watch: NODE_ENV == 'development',
