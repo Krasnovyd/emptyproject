@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import { validateField, validateForm } from 'validation'
 import ErrorMessage from 'errorMessage'
+import * as orderActions from './orderActions'
 
 class Order extends Component {
 	constructor(props) {
@@ -229,4 +231,10 @@ function mapStateToProps(state) {
 	}
 }
 
-export default connect(mapStateToProps)(Order)
+function mapDispatchToProps(dispatch) {
+  return {
+    orderActions: bindActionCreators(orderActions, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Order)

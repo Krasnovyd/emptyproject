@@ -5,12 +5,12 @@ const initialState = {
 			name: 'Home'
 		},
 		{
-			id: 'features',
-			name: 'Features'
-		},
-		{
 			id: 'sample',
 			name: 'Sample'
+		},
+		{
+			id: 'features',
+			name: 'Features'
 		},
 		{
 			id: 'about',
