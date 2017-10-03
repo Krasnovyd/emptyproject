@@ -25,11 +25,33 @@
 // 	}
 // }
 
-export function selectedMenu(type) {
+export function prepareOrder(tabs) {
 	return (dispatch) => {
+		const selectedMenu = tabs.find(cur => {
+			return cur.active
+		})
+
 		return dispatch({
-			type: 'SELECTED_MENU',
-			response: type
+			type: 'PREPARE_ORDER',
+			response: {
+				selectedMenu: selectedMenu.title
+			}
+		})
+	}
+}
+
+export function changeTab(tabs, activeIndex) {
+	return (dispatch) => {
+		tabs.map((tab, index) => {
+			tab.active = activeIndex == index
+			return tab
+		})
+
+		return dispatch({
+			type: 'CHANGE_TAB',
+			response: {
+				tabs
+			}
 		})
 	}
 }

@@ -5,5 +5,6 @@ export const word = /^[\w]+$/;
 export const blank = /^.{1,}$/;
 export const long = /^.{0,255}$/;
 export const short = /^.{5,}$/;
-export const phone = /^\+\d*$/;
+export const phone = /^\+\d\*$/;
+export const phoneSize = /^.{13,}$/;
 export const email = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import About from './routes/about/about'
 import Footer from './routes/footer/footer'
 import Home from './routes/home/home'
-import Nav from './nav/nav'
-import Order from './order/order'
+import Menu from './routes/menu/menu'
+import Nav from './routes/nav/nav'
+import Order from 'order/order'
 
 export default class App extends Component {
 	render() {
@@ -12,8 +13,8 @@ export default class App extends Component {
 				<Nav />
 				<div id='container'>
 					<Home />
-					<section id='sample'>1</section>
 					<section id='features'>2</section>
+					<Menu />
 					<About />
 				</div>
 				<Footer />

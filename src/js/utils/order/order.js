@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 import { validateField, validateForm } from 'validation'
 import ErrorMessage from 'errorMessage'
-import * as orderActions from './orderActions'
 
 class Order extends Component {
 	constructor(props) {
@@ -27,7 +25,7 @@ class Order extends Component {
 				phone: {
 					value: '+380',
 					valid: true,
-					rules: ['blank', 'phone', 'long'],
+					rules: ['blank', 'phone', 'phoneSize', 'long'],
 					errors: []
 				},
 				email: {
@@ -97,18 +95,15 @@ class Order extends Component {
 			}
 		}
 
-		form.menu = this.props.order.selectedMenu
+		form.menu = this.props.menu.selectedMenu
 
 		console.log('SAVED!!!', form)
-		http.send(JSON.stringify(form));
+		// http.send(JSON.stringify(form));
 	}
 
 	render() {
-		const order = this.props.order
+		const menu = this.props.menu
 		const form = this.state.form
-		const menuSelected = order.menus.find(cur => {
-			return cur.value == order.selectedMenu
-		})
 
 		return(
 			<div className='modal fade order' id='order' role='dialog' aria-hidden='true'>
@@ -116,7 +111,7 @@ class Order extends Component {
 					<div className='modal-content'>
 						<div className='modal-header'>
 							<h5 className='modal-title' id='exampleModalLabel'>
-								{ `Оформление заказа - "${menuSelected.label}"` }
+								{ `Оформление заказа - "${menu.selectedMenu}"` }
 							</h5>
 							<button type='button' className='close' data-dismiss='modal' aria-label='Close'>
 								<span aria-hidden='true'>&times;</span>
@@ -198,15 +193,15 @@ class Order extends Component {
 											<div className='col-md-6'>
 												<Select
 													name='form-field-name'
-													value={ order.startTime }
-													options={ order.deliveryTime }
+													value={ menu.startTime }
+													options={ menu.deliveryTime }
 													onChange={ this.handleChangeSelect } />
 											</div>
 											<div className='col-md-6'>
 												<Select
 													name='form-field-name'
-													value={ order.startTime }
-													options={ order.deliveryTime }
+													value={ menu.startTime }
+													options={ menu.deliveryTime }
 													onChange={ this.handleChangeSelect } />
 											</div>
 										</div>
@@ -227,14 +222,8 @@ class Order extends Component {
 
 function mapStateToProps(state) {
 	return {
-		order: state.order
+		menu: state.menu
 	}
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    orderActions: bindActionCreators(orderActions, dispatch)
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Order)
+export default connect(mapStateToProps)(Order)

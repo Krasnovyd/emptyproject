@@ -1,0 +1,133 @@
+.menu {
+	background-color: @first-color;
+	overflow: hidden;
+
+	background-image: url('../images/content-bg.jpg');
+	background-position: bottom left;
+	background-repeat: repeat-x;
+	background-size: cover;
+
+
+	&--tabs {
+		padding-left: 0;
+		border-bottom: 1px solid @border-color;
+		margin: 0 -100%;
+		padding: 0 100%;
+	}
+
+	&--tab {
+		width: 150px;
+		margin: 0 10px;
+		padding: 10px 10px 0 10px;
+		cursor: pointer;
+		color: @second-color;
+		list-style: none;
+		text-align: center;
+
+		&.active {
+			position: relative;
+			color: @second-color;
+			border: 1px solid @border-color;
+			margin-bottom: -1px;
+			border-bottom: none;
+			border-radius: 26px 26px 0 0;
+			background: @third-color;
+
+			.menu--tab-title {
+				background-color: @second-color;
+				border-radius: 50px;
+				color: @third-color;
+			}
+
+			.menu--tab-border {
+				position: absolute;
+				bottom: 0;
+				width: 20px;
+				height: 20px;
+				background: @first-color;
+				background-color: @third-color;
+
+				&::after {
+					content: '';
+					position: absolute;
+					width: 20px;
+					height: 20px;
+					bottom: 0;
+					left: 0;
+					background: @first-color;
+					border-bottom: 1px solid @border-color;
+				}
+
+				&-left {
+					right: 100%;
+
+					&::after {
+						border-right: 1px solid @border-color;
+						border-radius: 0 0 15px 0;
+					}
+				}
+
+				&-right {
+					left: 100%;
+
+					&::after {
+						border-left: 1px solid @border-color;
+						border-radius: 0 0 0 15px;
+					}
+				}
+			}
+		}
+
+		&-title {
+			margin-bottom: 0;
+			font-weight: bold;
+			font-size: 32px;
+			line-height: 40px;
+		}
+
+		&-sub {
+
+		}
+	}
+
+	&--days {
+		padding-left: 0;
+		list-style: none;
+		
+		li {
+			padding: 10px 10px 0;
+			cursor: pointer;
+		}
+
+		li.active {
+			color: red;
+		}
+	}
+
+	&--container,
+	&--order {
+		background: @third-color;
+		margin: 0 -10px;
+	}
+}
+
+.menu-content {
+	padding: 10px;
+
+	&--day {
+		margin-bottom: 15px;
+
+		&-title {
+			margin-bottom: 0;
+		}
+
+		&-info {
+			color: @dim-color;
+			font-size: 12px;
+
+			span {
+				margin-right: 8px;
+			}
+		}
+	}
+}

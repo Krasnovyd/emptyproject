@@ -1,0 +1,29 @@
+@bigCircle: 60px;
+@smallCircle: 48px;
+
+.info-circle {
+	margin-right: 10px;
+	display: inline-block;
+	color: @dim-color;
+	text-align: center;
+
+	span {
+		border: 1px solid @second-color;
+		width: @bigCircle;
+		height: @bigCircle;
+		margin: 0 0 5px 0;
+		border-radius: 50%;
+		font-size: 18px;
+		line-height: @bigCircle;
+		text-align: center;
+		color: @second-color;
+
+		&.small {
+			border-color: @dim-color;
+			width: @smallCircle;
+			height: @smallCircle;
+			line-height: @smallCircle;
+			font-size: 16px;
+		}
+	}
+}

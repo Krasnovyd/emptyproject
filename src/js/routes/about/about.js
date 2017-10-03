@@ -7,7 +7,7 @@ import delivery from 'icons/delivery.svg'
 export default class Nav extends Component {
 	render() {
 		return(
-			<section id='about'>
+			<section id='about' className='pt-4 pb-4'>
 				<div className='container'>
 					<div className='row'>
 						<div className='col'>

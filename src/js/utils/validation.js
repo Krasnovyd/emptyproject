@@ -5,6 +5,7 @@ const validateErrors = {
 	blank: 'This value should not be blank.',
 	email: 'Email is not valid.',
 	phone: 'Phone is not valid.',
+	phoneSize: 'This value is too short.',
 	long: 'This value is too long. It should have 255 characters or less.',
 	short: 'This value is too short. It should have 5 characters or more.'
 }
