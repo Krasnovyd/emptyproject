@@ -14,24 +14,29 @@ const initialState = {
 		{
 			active: false,
 			title: 'hard',
-			sub: '2000kkal'
-		},
-		{
-			active: false,
-			title: 'business',
-			sub: '2000kkal'
+			sub: '2500kkal'
 		}
 	],
-	selectedMenu: 'lite'
+	selectedMenu: 'lite',
+	weekendsOff: false,
+	daysCount: 1
 }
 
 export default function nav(state = initialState, action) {
+	let daysCount
+
 	switch (action.type) {
 		case 'PREPARE_ORDER':
 			return {...state, selectedMenu: action.response.selectedMenu}
 
 		case 'CHANGE_TAB':
 			return {...state, tabs: action.response.tabs}
+
+		case 'WEEKENDS_OFF':
+			return {...state, weekendsOff: action.response.weekendsOff, daysCount: 1}
+
+		case 'CHANGE_DAYS_COUNT':
+			return {...state, daysCount: action.response.count}
 
 		default:
 			return state

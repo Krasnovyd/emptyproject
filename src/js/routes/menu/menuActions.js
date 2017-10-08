@@ -55,3 +55,25 @@ export function changeTab(tabs, activeIndex) {
 		})
 	}
 }
+
+export function weekendsOff(bool) {
+	return (dispatch) => {
+		return dispatch({
+			type: 'WEEKENDS_OFF',
+			response: {
+				weekendsOff: !bool
+			}
+		})
+	}
+}
+
+export function changeDaysCount(count) {
+	return (dispatch) => {
+		return dispatch({
+			type: 'CHANGE_DAYS_COUNT',
+			response: {
+				count
+			}
+		})
+	}
+}

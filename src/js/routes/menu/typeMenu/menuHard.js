@@ -1,19 +1,291 @@
-import React, { Component } from 'react'
-
-export default class MenuHard extends Component {
-	constructor(props) {
-		super(props)
-
-		this.state = {
-
-		}
-	}
-
-	render() {
-		return(
-			<div className='menu--content'>
-				hard
-			</div>
-		)
+export default {
+	'пн': {
+		menu: [
+			{
+				name: 'hard',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			},
+			{
+				name: 'hard',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			},
+			{
+				name: 'hard',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			},
+			{
+				name: 'hard',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			},
+			{
+				name: 'hard',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			}
+		]
+	},
+	'вт': {
+		menu: [
+			{
+				name: 'tuesday',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			},
+			{
+				name: 'tuesday',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			},
+			{
+				name: 'tuesday',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			},
+			{
+				name: 'tuesday',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			}
+		]
+	},
+	'ср': {
+		menu: [
+			{
+				name: 'sreda',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			},
+			{
+				name: 'hard',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			},
+			{
+				name: 'hard',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			},
+			{
+				name: 'hard',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			}
+		]
+	},
+	'чт': {
+		menu: [
+			{
+				name: 'hard',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			},
+			{
+				name: 'hard',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			},
+			{
+				name: 'hard',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			},
+			{
+				name: 'hard',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			}
+		]
+	},
+	'пт': {
+		menu: [
+			{
+				name: 'hard',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			},
+			{
+				name: 'hard',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			},
+			{
+				name: 'hard',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			},
+			{
+				name: 'hard',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			}
+		]
+	},
+	'сб': {
+		menu: [
+			{
+				name: 'hard',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			},
+			{
+				name: 'hard',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			},
+			{
+				name: 'hard',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			},
+			{
+				name: 'hard',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			}
+		]
+	},
+	'вс': {
+		menu: [
+			{
+				name: 'hard',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			},
+			{
+				name: 'hard',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			},
+			{
+				name: 'hard',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			},
+			{
+				name: 'hard',
+				info: {
+					kkal: 314,
+					b: 12,
+					j: 3,
+					y: 49
+				}
+			}
+		]
 	}
 }
