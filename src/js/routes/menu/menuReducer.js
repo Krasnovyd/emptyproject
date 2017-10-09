@@ -19,7 +19,7 @@ const initialState = {
 	],
 	selectedMenu: 'lite',
 	weekendsOff: false,
-	daysCount: 1
+	daysCount: '1 day'
 }
 
 export default function nav(state = initialState, action) {
@@ -33,7 +33,7 @@ export default function nav(state = initialState, action) {
 			return {...state, tabs: action.response.tabs}
 
 		case 'WEEKENDS_OFF':
-			return {...state, weekendsOff: action.response.weekendsOff, daysCount: 1}
+			return {...state, weekendsOff: action.response.weekendsOff}
 
 		case 'CHANGE_DAYS_COUNT':
 			return {...state, daysCount: action.response.count}

@@ -21,18 +21,18 @@ class Menu extends Component {
 				2: MenuHard
 			},
 			daysOptions: [
-				{ value: 1, label: '1 день' },
-				{ value: 5, label: '5 дней' },
-				{ value: 10, label: '10 дней'},
-				{ value: 15, label: '15 дней'},
-				{ value: 20, label: '20 дней'}
+				{ value: '1 day', label: '1 день', days: 1 },
+				{ value: '1 week', label: '5 дней', days: 5  },
+				{ value: '2 week', label: '10 дней', days: 10 },
+				{ value: '3 week', label: '15 дней', days: 15 },
+				{ value: '4 week', label: '20 дней', days: 20 }
 			],
 			daysOptionsWeekendsOff: [
-				{ value: 1, label: '1 день' },
-				{ value: 7, label: '7 дней' },
-				{ value: 14, label: '14 дней' },
-				{ value: 21, label: '21 день' },
-				{ value: 28, label: '28 дней' }
+				{ value: '1 day', label: '1 день', days: 1 },
+				{ value: '1 week', label: '7 дней', days: 7 },
+				{ value: '2 week', label: '14 дней', days: 14 },
+				{ value: '3 week', label: '21 день', days: 21 },
+				{ value: '4 week', label: '28 дней', days: 28 }
 			]
 		}
 	}
@@ -106,7 +106,7 @@ class Menu extends Component {
 												selectedDay={ this.state.selectedDay } />
 							<div className='menu--order container'>
 								<div className='row'>
-									<div className='col'>
+									<div className='col menu--order-checkbox' title='Доставка с пн-пт'>
 										<input className='checkbox'
 													onChange={ () => {} }
 													checked={ menu.weekendsOff }
@@ -120,13 +120,17 @@ class Menu extends Component {
 											clearable={ false }
 											onChange={ this.handleChangeSelect } />
 									</div>
-									<div className='col'>
-
+									<div className='col menu--order-sum'>
+										<div className='d-flex flex-column'>
+											<b>{ 6000 } грн</b>
+											<small>* { 266 } грн/день</small>
+										</div>
 									</div>
-									<div className='col'>
+									<div className='col menu--order-order'>
 										<button data-toggle='modal'
 														data-target='#order'
-														onClick={ menuActions.prepareOrder.bind(null, menu.tabs) }>Order</button>
+														className='menu--order-button'
+														onClick={ menuActions.prepareOrder.bind(null, menu.tabs) }>ЗАКАЗАТЬ</button>
 									</div>
 								</div>
 							</div>

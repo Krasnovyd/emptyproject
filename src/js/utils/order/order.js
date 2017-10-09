@@ -9,6 +9,7 @@ class Order extends Component {
 
 		this.state = {
 			marked: false,
+			showDetails: false,
 			form: {
 				firstName: {
 					value: '',
@@ -39,23 +40,10 @@ class Order extends Component {
 					valid: true,
 					rules: ['blank', 'long'],
 					errors: []
-				},
-				promocod: {
-					value: '',
-					valid: true,
-					rules: ['long'],
-					errors: []
-				},
-				comment: {
-					value: '',
-					valid: true,
-					rules: [],
-					errors: []
 				}
 			}
 		}
 	}
-
 
 	handleChange = (field, event) => {
 		let state = this.state.form
@@ -101,6 +89,10 @@ class Order extends Component {
 		// http.send(JSON.stringify(form));
 	}
 
+	handleShowDetails = (bool) => {
+		this.setState({showDetails: bool})
+	}
+
 	render() {
 		const menu = this.props.menu
 		const form = this.state.form
@@ -113,12 +105,12 @@ class Order extends Component {
 							<h5 className='modal-title' id='exampleModalLabel'>
 								{ `Оформление заказа - "${menu.selectedMenu}"` }
 							</h5>
-							<button type='button' className='close' data-dismiss='modal' aria-label='Close'>
+							<button type='button' className='order--close close' data-dismiss='modal' aria-label='Close'>
 								<span aria-hidden='true'>&times;</span>
 							</button>
 						</div>
 						<div className='modal-body'>
-							<form>
+							<form className='container'>
 								<div className='form-group row'>
 									<div className={ 'col-md-6 ' + ( form['firstName'].valid ? '' : 'validation-error') }>
 										<label>Имя</label>
@@ -165,25 +157,27 @@ class Order extends Component {
 										<ErrorMessage errors={ form['address'].errors } />
 									</div>
 								</div>
-								<div className='form-group row'>
-									<div className={ 'col ' + ( form['promocod'].valid ? '' : 'validation-error') }>
-										<label>Промокод</label>
-										<input className='form-control' 
-													placeholder='SALE-COD'
-													value={ form['promocod'].value }
-													onChange={ this.handleChange.bind(this, 'promocod') } />
-										<ErrorMessage errors={ form['promocod'].errors } />
+								{/*
+									<div className='form-group row'>
+										<div className={ 'col ' + ( form['promocod'].valid ? '' : 'validation-error') }>
+											<label>Промокод</label>
+											<input className='form-control' 
+														placeholder='SALE-COD'
+														value={ form['promocod'].value }
+														onChange={ this.handleChange.bind(this, 'promocod') } />
+											<ErrorMessage errors={ form['promocod'].errors } />
+										</div>
 									</div>
-								</div>
-								<div className='form-group row'>
-									<div className={ 'col ' + ( form['comment'].valid ? '' : 'validation-error') }>
-										<label>Комментарий к заказу</label>
-										<textarea className='form-control'
-															value={ form['comment'].value }
-															onChange={ this.handleChange.bind(this, 'comment') }></textarea>
-										<ErrorMessage errors={ form['comment'].errors } />
+									<div className='form-group row'>
+										<div className={ 'col ' + ( form['comment'].valid ? '' : 'validation-error') }>
+											<label>Комментарий к заказу</label>
+											<textarea className='form-control'
+																value={ form['comment'].value }
+																onChange={ this.handleChange.bind(this, 'comment') }></textarea>
+											<ErrorMessage errors={ form['comment'].errors } />
+										</div>
 									</div>
-								</div>
+								*/}
 								{/*
 									<div className='form-group'>
 										<div className='row'>
@@ -209,9 +203,34 @@ class Order extends Component {
 								*/}
 							</form>
 						</div>
-						<div className='modal-footer'>
-							<button type='button' className='btn btn-secondary' data-dismiss='modal'>Отмена</button>
-							<button type='button' className='btn btn-primary' onClick={ this.onSubmit }>Оформить заказ</button>
+						<div className='order-details'>
+							{
+								this.state.showDetails ?
+								<div className='order-details--list'>
+									<p><b>Меню: </b>{ menu.selectedMenu }</p>
+									<p><b>Количество дней: </b>{ parseInt(menu.daysCount) }</p>
+									{
+										menu.weekendsOff ?
+										<p><b>Доставка с пн-пт</b></p>
+										: null
+									}
+									<p><b>Сумма к оплате: </b>{ '6000грн' }</p>
+									<p onClick={ this.handleShowDetails.bind(null, false) }
+													className='order-details--hide'>
+										Скрыть детали
+									</p>
+								</div>
+								: 
+								<p onClick={ this.handleShowDetails.bind(null, true) }
+												className='order-details--show'>
+									Показать детали заказа
+								</p>
+							}
+						</div>
+						<div className='d-flex justify-content-center p-3'>
+							<button 
+								className='order--success' 
+								onClick={ this.onSubmit }>ЗАКАЗАТЬ</button>
 						</div>
 					</div>
 				</div>

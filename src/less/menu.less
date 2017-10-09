@@ -90,6 +90,39 @@
 
 	&--order {
 		padding-top: 15px;
+
+		.col {
+			padding-top: 15px;
+		}
+
+		&-checkbox.col {
+			padding-top: 21px;
+		}
+
+		&-sum {
+			b {
+				line-height: 18px;
+			}
+
+			small {
+				color: @dim-color;
+			}
+		}
+	
+		&-button {
+			width: 150px;
+			height: 60px;
+			border-radius: 50px;
+			border: none;
+			background-color: @second-color;
+			color: white;
+			font-weight: bold;
+			cursor: pointer;
+		}
+
+		&-order.col {
+			padding-top: 0;
+		}
 	}
 }
 
@@ -103,8 +136,8 @@
 	}
 
 	&--info {
-		padding-top: 10px;
-		padding-bottom: 10px;
+		padding-top: 17px;
+		padding-bottom: 15px;
 		font-size: 16px;
 		line-height: 16px;
 		border-bottom: 1px solid @border-color;

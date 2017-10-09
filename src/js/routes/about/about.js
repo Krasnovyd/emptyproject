@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import scale from 'icons/scale.svg'
-import snowflake from 'icons/snowflake.svg'
 import stew from 'icons/stew.svg'
 import delivery from 'icons/delivery.svg'
 
@@ -11,8 +10,8 @@ export default class Nav extends Component {
 				<div className='container'>
 					<div className='row'>
 						<div className='col'>
-							<div className='about--img about--img-none'>
-								<img src={ snowflake } alt=''/>
+							<div className='about--img'>
+								<img src={ scale } alt=''/>
 							</div>
 							<div className='about--text'>
 								<h4>Отсутствие замороженных продуктов</h4>
