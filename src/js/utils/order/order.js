@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as menuActions from '../../routes/menu/menuActions'
 import { validateField, validateForm } from 'validation'
 import ErrorMessage from 'errorMessage'
+import Select from 'react-select'
 
 class Order extends Component {
 	constructor(props) {
@@ -71,7 +74,7 @@ class Order extends Component {
 
 	submit = (form) => {
 		let http = new XMLHttpRequest();
-		let url = '/hello';
+		let url = '/test.php';
 		http.open('POST', url, true);
 
 		//Send the proper header information along with the request
@@ -79,18 +82,38 @@ class Order extends Component {
 
 		http.onreadystatechange = function() {//Call a function when the state changes.
 			if(http.readyState == 4 && http.status == 200) {
-				console.log('DANGER!!!', http.responseText);
+				$('#order').modal('hide')
+				// console.log('Response!!!', http.responseText);
 			}
 		}
 
 		form.menu = this.props.menu.selectedMenu
 
 		console.log('SAVED!!!', form)
-		// http.send(JSON.stringify(form));
+		http.send(JSON.stringify(form));
 	}
 
 	handleShowDetails = (bool) => {
 		this.setState({showDetails: bool})
+	}
+
+	handleChangeSelect = (type, event) => {
+		let deliveryStart = this.props.menu.deliveryStart
+		let deliveryEnd = this.props.menu.deliveryEnd
+
+		if (type == 'deliveryStart') {
+			if (this.props.menu.deliveryEnd - event.value <= 2) {
+				deliveryEnd = event.value + 2
+			}
+			deliveryStart = event.value
+		} else {
+			if (event.value - this.props.menu.deliveryStart <= 2) {
+				deliveryStart = event.value - 2
+			}
+			deliveryEnd = event.value
+		}
+
+		this.props.menuActions.changeDeliveryTimes(deliveryStart, deliveryEnd)
 	}
 
 	render() {
@@ -178,29 +201,29 @@ class Order extends Component {
 										</div>
 									</div>
 								*/}
-								{/*
-									<div className='form-group'>
-										<div className='row'>
-											<label>Доставка: (Минимальный интервал доставки — 2 часа)</label>
+								<div className='form-group'>
+									<div className='row'>
+										<label>Доставка: <small>(Минимальный интервал доставки — 2 часа)</small></label>
+									</div>
+									<div className='row'>
+										<div className='col-md-6'>
+											<Select
+												name='form-field-name'
+												value={ menu.deliveryStart }
+												options={ menu.deliveryStartTimes }
+												clearable={ false }
+												onChange={ this.handleChangeSelect.bind(null, 'deliveryStart') } />
 										</div>
-										<div className='row'>
-											<div className='col-md-6'>
-												<Select
-													name='form-field-name'
-													value={ menu.startTime }
-													options={ menu.deliveryTime }
-													onChange={ this.handleChangeSelect } />
-											</div>
-											<div className='col-md-6'>
-												<Select
-													name='form-field-name'
-													value={ menu.startTime }
-													options={ menu.deliveryTime }
-													onChange={ this.handleChangeSelect } />
-											</div>
+										<div className='col-md-6'>
+											<Select
+												name='form-field-name'
+												value={ menu.deliveryEnd }
+												options={ menu.deliveryEndTimes }
+												clearable={ false }
+												onChange={ this.handleChangeSelect.bind(null, 'deliveryEnd') } />
 										</div>
 									</div>
-								*/}
+								</div>
 							</form>
 						</div>
 						<div className='order-details'>
@@ -215,6 +238,7 @@ class Order extends Component {
 										: null
 									}
 									<p><b>Сумма к оплате: </b>{ '6000грн' }</p>
+									<p><b>Доставка: </b> с { menu.deliveryStart }:00 до { menu.deliveryEnd }:00</p>
 									<p onClick={ this.handleShowDetails.bind(null, false) }
 													className='order-details--hide'>
 										Скрыть детали
@@ -245,4 +269,10 @@ function mapStateToProps(state) {
 	}
 }
 
-export default connect(mapStateToProps)(Order)
+function mapDispatchToProps(dispatch) {
+	return {
+		menuActions: bindActionCreators(menuActions, dispatch)
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Order)

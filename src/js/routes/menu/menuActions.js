@@ -77,3 +77,15 @@ export function changeDaysCount(count) {
 		})
 	}
 }
+
+export function changeDeliveryTimes(deliveryStart, deliveryEnd) {
+	return (dispatch) => {
+		return dispatch({
+			type: 'CHANGE_DELIVERY_TIMES',
+			response: {
+				deliveryStart,
+				deliveryEnd
+			}
+		})
+	}
+}
