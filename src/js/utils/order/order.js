@@ -201,12 +201,12 @@ class Order extends Component {
 										</div>
 									</div>
 								*/}
-								<div className='form-group'>
-									<div className='row'>
+								<div className='form-group form-group--delivery'>
+									<div>
 										<label>Доставка: <small>(Минимальный интервал доставки — 2 часа)</small></label>
 									</div>
 									<div className='row'>
-										<div className='col-md-6'>
+										<div className='col-md-6 mb-2'>
 											<Select
 												name='form-field-name'
 												value={ menu.deliveryStart }

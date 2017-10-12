@@ -17,7 +17,7 @@ app.get("/", function(req, res) {
 app.use(bodyParser.json());
 
  /* sending emails */
-app.post("/hello", mailer);
+app.post("/test.php", mailer);
 
 /* serves all the static files */
 app.get(/^(.+)$/, function(req, res){ 

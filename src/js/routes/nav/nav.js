@@ -2,6 +2,14 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 class Nav extends Component {
+	constructor(props) {
+		super(props)
+
+		this.state = {
+			fixedTop: false
+		}
+	}
+
 	handleScroll(target) {
 		let heightTarget = document.getElementById(target).offsetTop - 56
 		let bodyScroll = document.body.scrollTop
@@ -20,10 +28,21 @@ class Nav extends Component {
 		}, speed)
 	}
 
+	onScrollDocument = (event) => {
+		this.setState({fixedTop: document.body.scrollTop > 85})
+	}
+
+	componentDidMount() {
+		document.addEventListener('scroll', this.onScrollDocument);
+	}
+
+	componentWillUnmount() {
+		document.removeEventListener('scroll', this.onScrollDocument);
+	}
+
 	render() {
 		return(
-			<nav id='navbar' className='navbar navbar-expand-lg fixed-top'>
-				<a className='navbar-brand'>LOGO</a>
+			<nav id='navbar' className={'navbar navbar-expand-lg navbar-light bg-light ' + (this.state.fixedTop ? 'fixed-top' : '')}>
 				<button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
 					<span className='navbar-toggler-icon'></span>
 				</button>
@@ -43,11 +62,6 @@ class Nav extends Component {
 							})
 						}
 					</ul>
-					{/*
-					<button type='button' className='btn btn-primary' data-toggle='modal' data-target='#order'>
-						Launch demo modal
-					</button>
-					*/}
 				</div>
 			</nav>
 		)

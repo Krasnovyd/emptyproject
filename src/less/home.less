@@ -1,6 +1,7 @@
 .home {
+	position: relative;
 	min-height: 650px;
-	background-image: url('../images/home-bg.jpg');
+	background-image: url('../images/image.jpg');
 	background-position: bottom left;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -8,12 +9,22 @@
 	text-align: center;
 	color: @first-color;
 
+	&--wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0,0,0,0.3);
+	}
+
 	&--header {
 		margin-top: 110px;
 		margin-bottom: 200px;
 
 		h1 {
-			font-size: 50px;
+			font-family: Comfortaa;
+			font-size: 70px;
 		}
 	}
 
@@ -25,5 +36,11 @@
 		color: @second-color;
 		font-weight: bold;
 		cursor: pointer;
+	}
+}
+
+@media (min-width: 720px) {
+	h1 {
+		font-size: 50px;
 	}
 }

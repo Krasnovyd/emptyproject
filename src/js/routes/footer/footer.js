@@ -10,7 +10,7 @@ export default class Footer extends Component {
 							<address>
 								<p><strong>Город:</strong> Житомир</p>
 								<p><strong>Email:</strong> healthykitchen.zt@gmail.com</p>
-								<p><strong>Тел:</strong> +38(093) 340 ** **</p>
+								<p><strong>Тел:</strong> +38(067) 404 1 303</p>
 							</address>
 						</div>
 						<div className='col-6'>
