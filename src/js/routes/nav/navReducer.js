@@ -10,7 +10,7 @@ const initialState = {
 		},
 		{
 			id: 'about',
-			name: 'Наши преимущества'
+			name: 'О нас'
 		},
 		{
 			id: 'footer',

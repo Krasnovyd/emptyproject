@@ -77,7 +77,7 @@ class Menu extends Component {
 		let price = menu.days > 1 ? salePrice * menu.days : menu.tabs[activeMenuIndex].price
 
 		return(
-			<section id='menu' className='menu pt-4 pb-4'>
+			<section id='menu' className='menu pt-4 pb-5'>
 				<div className='container'>
 					<h2 className='text-center mb-4'>Меню</h2>
 					<ul className='menu--tabs d-flex justify-content-center'>
