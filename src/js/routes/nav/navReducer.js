@@ -1,12 +1,8 @@
 const initialState = {
 	links: [
 		{
-			id: 'home',
-			name: 'Home'
-		},
-		{
-			id: 'features',
-			name: 'Features'
+			id: 'howItWork',
+			name: 'Как это работает'
 		},
 		{
 			id: 'menu',
@@ -15,6 +11,10 @@ const initialState = {
 		{
 			id: 'about',
 			name: 'Наши преимущества'
+		},
+		{
+			id: 'footer',
+			name: 'Контакты'
 		}
 	]
 }

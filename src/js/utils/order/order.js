@@ -43,6 +43,12 @@ class Order extends Component {
 					valid: true,
 					rules: ['blank', 'long'],
 					errors: []
+				},
+				promocod: {
+					value: '',
+					valid: true,
+					rules: [],
+					errors: []
 				}
 			}
 		}
@@ -88,6 +94,11 @@ class Order extends Component {
 		}
 
 		form.menu = this.props.menu.selectedMenu
+		form.deliveryStart = this.props.menu.deliveryStart
+		form.deliveryEnd = this.props.menu.deliveryEnd
+		form.weekendsOff = this.props.menu.weekendsOff
+		form.daysCount = this.props.menu.daysCount
+		form.days = this.props.menu.days
 
 		console.log('SAVED!!!', form)
 		http.send(JSON.stringify(form));
@@ -119,6 +130,15 @@ class Order extends Component {
 	render() {
 		const menu = this.props.menu
 		const form = this.state.form
+		let activeMenuIndex = 0
+
+		menu.tabs.forEach((tab, index) => {
+			if(tab.active) {
+				activeMenuIndex = index
+			}
+		})
+
+		let price = menu.days > 1 ? menu.tabs[activeMenuIndex].salePrice * menu.days : menu.tabs[activeMenuIndex].price
 
 		return(
 			<div className='modal fade order' id='order' role='dialog' aria-hidden='true'>
@@ -126,7 +146,7 @@ class Order extends Component {
 					<div className='modal-content'>
 						<div className='modal-header'>
 							<h5 className='modal-title' id='exampleModalLabel'>
-								{ `Оформление заказа - "${menu.selectedMenu}"` }
+								{ `Оформление заказа - ${menu.selectedMenu}` }
 							</h5>
 							<button type='button' className='order--close close' data-dismiss='modal' aria-label='Close'>
 								<span aria-hidden='true'>&times;</span>
@@ -180,17 +200,17 @@ class Order extends Component {
 										<ErrorMessage errors={ form['address'].errors } />
 									</div>
 								</div>
-								{/*
-									<div className='form-group row'>
-										<div className={ 'col ' + ( form['promocod'].valid ? '' : 'validation-error') }>
-											<label>Промокод</label>
-											<input className='form-control' 
-														placeholder='SALE-COD'
-														value={ form['promocod'].value }
-														onChange={ this.handleChange.bind(this, 'promocod') } />
-											<ErrorMessage errors={ form['promocod'].errors } />
-										</div>
+								<div className='form-group row'>
+									<div className={ 'col ' + ( form['promocod'].valid ? '' : 'validation-error') }>
+										<label>Промокод</label>
+										<input className='form-control' 
+													placeholder='SALE-COD'
+													value={ form['promocod'].value }
+													onChange={ this.handleChange.bind(this, 'promocod') } />
+										<ErrorMessage errors={ form['promocod'].errors } />
 									</div>
+								</div>
+								{/*
 									<div className='form-group row'>
 										<div className={ 'col ' + ( form['comment'].valid ? '' : 'validation-error') }>
 											<label>Комментарий к заказу</label>
@@ -231,13 +251,13 @@ class Order extends Component {
 								this.state.showDetails ?
 								<div className='order-details--list'>
 									<p><b>Меню: </b>{ menu.selectedMenu }</p>
-									<p><b>Количество дней: </b>{ parseInt(menu.daysCount) }</p>
+									<p><b>Количество дней: </b>{ menu.days }</p>
 									{
 										menu.weekendsOff ?
 										<p><b>Доставка с пн-пт</b></p>
 										: null
 									}
-									<p><b>Сумма к оплате: </b>{ '6000грн' }</p>
+									<p><b>Сумма к оплате: </b>{ price } грн</p>
 									<p><b>Доставка: </b> с { menu.deliveryStart }:00 до { menu.deliveryEnd }:00</p>
 									<p onClick={ this.handleShowDetails.bind(null, false) }
 													className='order-details--hide'>

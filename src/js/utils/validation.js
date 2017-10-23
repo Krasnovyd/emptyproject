@@ -1,11 +1,11 @@
 import * as regularExpression from 'regularExpression'
 
 const validateErrors = {
-	title: 'This value is not valid.',
-	blank: 'This value should not be blank.',
-	email: 'Email is not valid.',
-	phone: 'Phone is not valid.',
-	phoneSize: 'This value is too short.',
+	title: 'Не валидное поле.',
+	blank: 'Это поле должно быть заполнено.',
+	email: 'Не корректный email.',
+	phone: 'Не корректный номер.',
+	phoneSize: 'Не корректный номер.',
 	long: 'This value is too long. It should have 255 characters or less.',
 	short: 'This value is too short. It should have 5 characters or more.'
 }

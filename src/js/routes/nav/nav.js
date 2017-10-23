@@ -11,8 +11,8 @@ class Nav extends Component {
 	}
 
 	handleScroll(target) {
-		let heightTarget = document.getElementById(target).offsetTop - 56
 		let bodyScroll = document.body.scrollTop
+		let heightTarget = document.getElementById(target).offsetTop - (bodyScroll < 85 ? (65 + 56) : 56)
 		let speed = 20
 		let step = (heightTarget - bodyScroll) / (500 / speed)
 

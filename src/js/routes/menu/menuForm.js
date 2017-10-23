@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import MenuDay from './menuDay'
 
 export default class MenuForm extends Component {
 	render() {
@@ -11,10 +12,19 @@ export default class MenuForm extends Component {
 		}
 
 		menu.forEach(menu => {
-			total.kkal += menu.info.kkal
-			total.b += menu.info.b
-			total.j += menu.info.j
-			total.y += menu.info.y
+			if (menu.list) {
+				menu.list.forEach(menuDay => {
+					total.kkal += menuDay.info.kkal
+					total.b += menuDay.info.b
+					total.j += menuDay.info.j
+					total.y += menuDay.info.y
+				})
+			} else {
+				total.kkal += menu.info.kkal
+				total.b += menu.info.b
+				total.j += menu.info.j
+				total.y += menu.info.y
+			}
 		})
 
 		return(
@@ -24,15 +34,17 @@ export default class MenuForm extends Component {
 						{
 							menu.map((obj, index) => {
 								return (
-									<div key={ index } 
-											className='menu-content--day col-lg-3 col-md-6'>
-										<p className='menu-content--day-title'>{ obj.name }</p>
-										<div className='menu-content--day-info'>
-											<span>{ obj.info.kkal + ' ккал'}</span>
-											<span>{ obj.info.b + ' б'}</span>
-											<span>{ obj.info.j + ' ж'}</span>
-											<span>{ obj.info.y + ' у'}</span>
-										</div>
+									<div key={ index } className='menu-content--day col-lg-3 col-md-6'>
+										<p className='menu-content--day-number mb-0'>{ index + 1 }:</p>
+										{
+											obj.list ? 
+											obj.list.map((listDay, i) => {
+												return (
+													<MenuDay key={ i } day={ listDay } />
+												)
+											})
+											: <MenuDay day={ obj } />
+										}
 									</div>
 								)
 							})

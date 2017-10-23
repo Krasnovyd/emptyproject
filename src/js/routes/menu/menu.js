@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as menuActions from './menuActions'
 import Select from 'react-select'
-import MenuLite from './typeMenu/menuLite'
-import MenuStr from './typeMenu/menuStr'
-import MenuHard from './typeMenu/menuHard'
+import MenuFitness from './typeMenu/menuFitness'
+import MenuBalance from './typeMenu/menuBalance'
+import MenuStrong from './typeMenu/menuStrong'
 import MenuForm from './menuForm'
 
 class Menu extends Component {
@@ -16,9 +16,9 @@ class Menu extends Component {
 			days: ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'],
 			selectedDay: 'пн',
 			typeMenu: {
-				0: MenuLite,
-				1: MenuStr,
-				2: MenuHard
+				0: MenuFitness,
+				1: MenuBalance,
+				2: MenuStrong
 			},
 			daysOptions: [
 				{ value: '1 day', label: '1 день', days: 1 },
@@ -42,15 +42,23 @@ class Menu extends Component {
 	}
 
 	weekendsOff = () => {
+		let days = this.props.menu.days
+
 		if(this.state.selectedDay == 'сб' || this.state.selectedDay == 'вс') {
 			this.setState({selectedDay: 'пн'})
 		}
 
-		this.props.menuActions.weekendsOff(this.props.menu.weekendsOff)
+		if(!this.props.menu.weekendsOff && days > 1) {
+			days = days - days / 7 * 2
+		} else if (days > 1) {
+			days = days + days / 5 * 2
+		}
+
+		this.props.menuActions.weekendsOff(this.props.menu.weekendsOff, days)
 	}
 
 	handleChangeSelect = (event) => {
-		this.props.menuActions.changeDaysCount(event.value)
+		this.props.menuActions.changeDaysCount(event.value, event.days)
 	}
 
 	render() {
@@ -65,9 +73,13 @@ class Menu extends Component {
 			}
 		})
 
+		let salePrice = menu.tabs[activeMenuIndex].salePrice
+		let price = menu.days > 1 ? salePrice * menu.days : menu.tabs[activeMenuIndex].price
+
 		return(
 			<section id='menu' className='menu pt-4 pb-4'>
 				<div className='container'>
+					<h2 className='text-center mb-4'>Меню</h2>
 					<ul className='menu--tabs d-flex justify-content-center'>
 						{
 							menu.tabs.map((tab, index) => {
@@ -122,8 +134,8 @@ class Menu extends Component {
 									</div>
 									<div className='col menu--order-sum'>
 										<div className='d-flex flex-column'>
-											<b>{ 6000 } грн</b>
-											<small>* { 266 } грн/день</small>
+											<b>{ menu.days > 1 ? salePrice : price } грн/день</b>
+											<small>Всего: { price } грн</small>
 										</div>
 									</div>
 									<div className='col menu--order-order'>

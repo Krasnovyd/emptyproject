@@ -56,23 +56,25 @@ export function changeTab(tabs, activeIndex) {
 	}
 }
 
-export function weekendsOff(bool) {
+export function weekendsOff(bool, days) {
 	return (dispatch) => {
 		return dispatch({
 			type: 'WEEKENDS_OFF',
 			response: {
-				weekendsOff: !bool
+				weekendsOff: !bool,
+				days: days
 			}
 		})
 	}
 }
 
-export function changeDaysCount(count) {
+export function changeDaysCount(count, days) {
 	return (dispatch) => {
 		return dispatch({
 			type: 'CHANGE_DAYS_COUNT',
 			response: {
-				count
+				count,
+				days
 			}
 		})
 	}

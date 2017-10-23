@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import About from './routes/about/about'
+import HowItWork from './routes/howItWork/howItWork'
 import Footer from './routes/footer/footer'
 import Home from './routes/home/home'
 import Menu from './routes/menu/menu'
@@ -15,7 +16,7 @@ export default class App extends Component {
 				<Nav />
 				<div id='container'>
 					<Home />
-					<section id='features'>2</section>
+					<HowItWork />
 					<Menu />
 					<About />
 				</div>
