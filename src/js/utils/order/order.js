@@ -17,13 +17,13 @@ class Order extends Component {
 				firstName: {
 					value: '',
 					valid: true,
-					rules: ['title', 'blank', 'long'],
+					rules: ['blank', 'long'],
 					errors: []
 				},
 				lastName: {
 					value: '',
 					valid: true,
-					rules: ['title', 'blank', 'long'],
+					rules: ['blank', 'long'],
 					errors: []
 				},
 				phone: {

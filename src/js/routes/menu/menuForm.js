@@ -35,7 +35,7 @@ export default class MenuForm extends Component {
 							menu.map((obj, index) => {
 								return (
 									<div key={ index } className='menu-content--day col-lg-3 col-md-6'>
-										<p className='menu-content--day-number mb-0'>{ index + 1 }:</p>
+										{/*<p className='menu-content--day-number mb-0'>{ index + 1 }:</p>*/}
 										{
 											obj.list ? 
 											obj.list.map((listDay, i) => {
@@ -51,29 +51,33 @@ export default class MenuForm extends Component {
 						}
 					</div>
 				</div>
-				<div className='menu-content--info d-flex container'>
-					<div className='menu-content--info-total'>
-						<b>За неделю:</b>
+				{
+					this.props.days.name != 'business' ?	
+					<div className='menu-content--info d-flex container'>
+						<div className='menu-content--info-total'>
+							<b>За день:</b>
+						</div>
+						<div className='d-flex'>
+							<div className='d-flex flex-column menu-content--info-column col-md-4'>
+								<b>{ total.kkal }</b>
+								<small>ккалорий</small>
+							</div>
+							<div className='d-flex flex-column menu-content--info-column col-md-4'>
+								<b>{ total.b }</b>
+								<small>белки</small>
+							</div>
+							<div className='d-flex flex-column menu-content--info-column col-md-4'>
+								<b>{ total.j }</b>
+								<small>жиры</small>
+							</div>
+							<div className='d-flex flex-column menu-content--info-column col-md-4'>
+								<b>{ total.y }</b>
+								<small>углеводы</small>
+							</div>
+						</div>
 					</div>
-					<div className='d-flex'>
-						<div className='d-flex flex-column menu-content--info-column col-md-4'>
-							<b>{ total.kkal }</b>
-							<small>ккалорий</small>
-						</div>
-						<div className='d-flex flex-column menu-content--info-column col-md-4'>
-							<b>{ total.b }</b>
-							<small>белки</small>
-						</div>
-						<div className='d-flex flex-column menu-content--info-column col-md-4'>
-							<b>{ total.j }</b>
-							<small>жиры</small>
-						</div>
-						<div className='d-flex flex-column menu-content--info-column col-md-4'>
-							<b>{ total.y }</b>
-							<small>углеводы</small>
-						</div>
-					</div>
-				</div>
+					: null
+				}
 			</div>
 		)
 	}

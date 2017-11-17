@@ -7,6 +7,7 @@ export default class MenuDay extends Component {
 		return(
 			<div className='mb-2'>
 				<p className='menu-content--day-title'>{ menuDay.name }</p>
+				<img className='menu-content--day-photo' src={ menuDay.photo } />
 				<div className='menu-content--day-info'>
 					<span>{ menuDay.info.kkal + ' ккал'}</span>
 					<span>{ menuDay.info.b + ' б'}</span>

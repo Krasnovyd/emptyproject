@@ -4,22 +4,36 @@ const initialState = {
 			active: true,
 			title: 'Fitness',
 			sub: '1500 ккал',
-			salePrice: 299,
-			price: 320
+			salePrice: 220,
+			price: 240
 		},
 		{
 			active: false,
 			title: 'Balance',
 			sub: '2000 ккал',
-			salePrice: 350,
-			price: 370
+			salePrice: 270,
+			price: 290
 		},
 		{
 			active: false,
 			title: 'Strong',
 			sub: '2500 ккал',
-			salePrice: 390,
-			price: 410
+			salePrice: 300,
+			price: 320
+		},
+		{
+			active: false,
+			title: 'Business',
+			sub: '',
+			salePrice: 160,
+			price: 160
+		},
+		{
+			active: false,
+			title: 'Business+',
+			sub: '',
+			salePrice: 180,
+			price: 180
 		}
 	],
 	deliveryStart: 6,
@@ -35,7 +49,7 @@ const initialState = {
 		{ label: '10:00', value: 10 }
 	],
 	selectedMenu: 'Fitness',
-	weekendsOff: false,
+	weekendsOff: true,
 	daysCount: '1 day',
 	days: 1
 }

@@ -6,6 +6,8 @@ import Select from 'react-select'
 import MenuFitness from './typeMenu/menuFitness'
 import MenuBalance from './typeMenu/menuBalance'
 import MenuStrong from './typeMenu/menuStrong'
+import menuBusinessMan from './typeMenu/menuBusinessMan'
+import menuBusinessWoman from './typeMenu/menuBusinessWoman'
 import MenuForm from './menuForm'
 
 class Menu extends Component {
@@ -18,7 +20,9 @@ class Menu extends Component {
 			typeMenu: {
 				0: MenuFitness,
 				1: MenuBalance,
-				2: MenuStrong
+				2: MenuStrong,
+				3: menuBusinessMan,
+				4: menuBusinessWoman
 			},
 			daysOptions: [
 				{ value: '1 day', label: '1 день', days: 1 },
@@ -77,7 +81,7 @@ class Menu extends Component {
 		let price = menu.days > 1 ? salePrice * menu.days : menu.tabs[activeMenuIndex].price
 
 		return(
-			<section id='menu' className='menu pt-4 pb-5'>
+			<section id='menu' className='menu pt-5 pb-5'>
 				<div className='container'>
 					<h2 className='text-center mb-4'>Меню</h2>
 					<ul className='menu--tabs d-flex justify-content-center'>
@@ -118,13 +122,15 @@ class Menu extends Component {
 												selectedDay={ this.state.selectedDay } />
 							<div className='menu--order container'>
 								<div className='row'>
-									<div className='col menu--order-checkbox' title='Доставка с пн-пт'>
-										<input className='checkbox'
-													onChange={ () => {} }
-													checked={ menu.weekendsOff }
-													type='checkbox' />
-										<label onClick={ this.weekendsOff }>Без выходных</label>
-									</div>
+									{/*
+										<div className='col menu--order-checkbox' title='Доставка с пн-пт'>
+											<input className='checkbox'
+														onChange={ () => {} }
+														checked={ menu.weekendsOff }
+														type='checkbox' />
+											<label onClick={ this.weekendsOff }>Без выходных</label>
+										</div>
+									*/}
 									<div className='col'>
 										<Select
 											value={ menu.daysCount }

@@ -1,4 +1,5 @@
 export default {
+	'name': 'business',
 	'пн': {
 		menu: [
 			{
@@ -12,28 +13,14 @@ export default {
 				}
 			},
 			{
-				list: [
-					{
-						name: 'Макароны. Филе куриной грудки с сыром',
-						photo: 'src/images/food/b1_2.jpg',
-						info: {
-							kkal: 236,
-							b: 8,
-							j: 0,
-							y: 45
-						}
-					},
-					{
-						name: '',
-						photo: '',
-						info: {
-							kkal: 740,
-							b: 46,
-							j: 2,
-							y: 74
-						}
-					}
-				]
+				name: 'Макароны. Филе куриной грудки с сыром',
+				photo: 'src/images/food/b1_2.jpg',
+				info: {
+					kkal: 236,
+					b: 8,
+					j: 0,
+					y: 45
+				}
 			},
 			{
 				name: 'Гречка. Куриная грудка гриль',
@@ -43,26 +30,6 @@ export default {
 					b: 40,
 					j: 2,
 					y: 5
-				}
-			},
-			{
-				name: 'Рис с зирой. Котлета говяжья',
-				photo: 'src/images/coming_soon.jpg',
-				info: {
-					kkal: 279,
-					b: 32,
-					j: 16,
-					y: 0
-				}
-			},
-			{
-				name: 'Творожная запеканка с джемом',
-				photo: 'src/images/food/b1_5.jpg',
-				info: {
-					kkal: 192,
-					b: 40,
-					j: 3,
-					y: 0
 				}
 			}
 		]
@@ -78,30 +45,6 @@ export default {
 					j: 23,
 					y: 150
 				}
-			},
-			{
-				list: [
-					{
-						name: 'Гречка. Гнездо из куриной грудки с грибами и сыром',
-						photo: 'src/images/food/b2_2.jpg',
-						info: {
-							kkal: 236,
-							b: 7,
-							j: 3,
-							y: 46
-						}
-					},
-					{
-						name: '',
-						photo: '',
-						info: {
-							kkal: 749,
-							b: 62,
-							j: 2,
-							y: 5
-						}
-					}
-				]
 			},
 			{
 				name: 'Рыбный шницель. Овощи гриль',
@@ -122,16 +65,6 @@ export default {
 					j: 9,
 					y: 4
 				}
-			},
-			{
-				name: 'Сырники с джемом',
-				photo: 'src/images/food/b2_5.jpg',
-				info: {
-					kkal: 274,
-					b: 19,
-					j: 15,
-					y: 14
-				}
 			}
 		]
 	},
@@ -148,28 +81,14 @@ export default {
 				}
 			},
 			{
-				list: [
-					{
-						name: 'Спагетти Болоньезе',
-						photo: 'src/images/food/b3_2.jpg',
-						info: {
-							kkal: 239,
-							b: 4,
-							j: 3,
-							y: 46
-						}
-					},
-					{
-						name: '',
-						photo: '',
-						info: {
-							kkal: 734,
-							b: 64,
-							j: 2,
-							y: 76
-						}
-					}
-				]
+				name: 'Спагетти Болоньезе',
+				photo: 'src/images/food/b3_2.jpg',
+				info: {
+					kkal: 239,
+					b: 4,
+					j: 3,
+					y: 46
+				}
 			},
 			{
 				name: 'Гречка с грибами. Тефтели куриные в томатном соусе',
@@ -179,26 +98,6 @@ export default {
 					b: 42,
 					j: 2,
 					y: 4
-				}
-			},
-			{
-				name: 'Макаронные изделия. Куриная грудка гриль',
-				photo: 'src/images/food/b3_4.jpg',
-				info: {
-					kkal: 214,
-					b: 34,
-					j: 4,
-					y: 11
-				}
-			},
-			{
-				name: 'Творожная запеканка с изюмом',
-				photo: 'src/images/food/b3_5.jpg',
-				info: {
-					kkal: 281,
-					b: 30,
-					j: 15,
-					y: 7
 				}
 			}
 		]
@@ -216,28 +115,14 @@ export default {
 				}
 			},
 			{
-				list: [
-					{
-						name: 'Бургер',
-						photo: 'src/images/food/b4_2.jpg',
-						info: {
-							kkal: 236,
-							b: 8,
-							j: 3,
-							y: 45
-						}
-					},
-					{
-						name: '',
-						photo: '',
-						info: {
-							kkal: 776,
-							b: 42,
-							j: 32,
-							y: 118
-						}
-					}
-				]
+				name: 'Бургер',
+				photo: 'src/images/food/b4_2.jpg',
+				info: {
+					kkal: 236,
+					b: 8,
+					j: 3,
+					y: 45
+				}
 			},
 			{
 				name: 'Плов с куриным филе',
@@ -247,26 +132,6 @@ export default {
 					b: 38,
 					j: 2,
 					y: 2
-				}
-			},
-			{
-				name: 'Перловка. Гнездо из куриной грудки с грибами и сыром',
-				photo: 'src/images/food/b4_4.jpg',
-				info: {
-					kkal: 278,
-					b: 38,
-					j: 1,
-					y: 5
-				}
-			},
-			{
-				name: 'Творожно-фруктовое суфле',
-				photo: 'src/images/food/b4_5.jpg',
-				info: {
-					kkal: 208,
-					b: 39,
-					j: 3,
-					y: 4
 				}
 			}
 		]
@@ -284,37 +149,13 @@ export default {
 				}
 			},
 			{
-				list: [
-					{
-						name: 'Булгур с тимьяном. Куриная грудка гриль',
-						photo: 'src/images/coming_soon.jpg',
-						info: {
-							kkal: 233,
-							b: 8,
-							j: 5,
-							y: 43
-						}
-					},
-					{
-						name: '',
-						photo: '',
-						info: {
-							kkal: 818,
-							b: 38,
-							j: 21,
-							y: 102
-						}
-					}
-				]
-			},
-			{
-				name: 'Гречка отварная. Куриный рулет',
-				photo: 'src/images/food/b5_3.jpg',
+				name: 'Булгур с тимьяном и оливковым маслом. Куриная грудка гриль',
+				photo: 'src/images/coming_soon.jpg',
 				info: {
-					kkal: 198,
-					b: 34,
-					j: 6,
-					y: 2
+					kkal: 233,
+					b: 8,
+					j: 5,
+					y: 43
 				}
 			},
 			{
@@ -325,16 +166,6 @@ export default {
 					b: 47,
 					j: 3,
 					y: 7
-				}
-			},
-			{
-				name: 'Сырники с изюмом и джемом',
-				photo: 'src/images/food/b5_5.jpg',
-				info: {
-					kkal: 203,
-					b: 32,
-					j: 2,
-					y: 13
 				}
 			}
 		]

@@ -7,7 +7,7 @@ import food from 'icons/food.svg'
 export default class HowItWork extends Component {
 	render() {
 		return(
-			<section id='howItWork' className='work pt-4 pb-4'>
+			<section id='howItWork' className='work pt-5 pb-5'>
 				<div className='container'>
 					<h2 className='text-center mb-4'>Как это работает</h2>
 					<div className='row'>

@@ -13,6 +13,13 @@
 		cursor: pointer;
 		list-style: none;
 		text-align: center;
+		
+		&:nth-of-type(4),
+		&:last-of-type {
+			.menu--tab-title {
+				font-size: 25px;
+			}
+		}
 
 		&::after {
 			content: '';
@@ -167,9 +174,18 @@
 			font-weight: bold;
 			line-height: 1.2;
 			font-size: 16px;
+			height: 38px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		&-photo {
+			width: 80%;
+			margin-top: 0.6em;
 		}
 
 		&-info {
+			display: none;
 			color: @dim-color;
 			font-size: 12px;
 

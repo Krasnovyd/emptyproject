@@ -13,7 +13,6 @@ export default class App extends Component {
 		return (
 			<div className='wrapper'>
 				<NavOuter />
-				<Nav />
 				<div id='container'>
 					<Home />
 					<HowItWork />

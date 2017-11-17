@@ -2,9 +2,10 @@ export default {
 	'пн': {
 		menu: [
 			{
-				name: 'Рисовая каша на молоке с черносливом',
+				name: 'Протеиновые маффины',
+				photo: 'src/images/food/1_1.jpg',
 				info: {
-					kkal: 312,
+					kkal: 332,
 					b: 8,
 					j: 3,
 					y: 70
@@ -13,7 +14,8 @@ export default {
 			{
 				list: [
 					{
-						name: 'Отварные спагетти со свежей зеленью',
+						name: 'Салат "Цезарь"',
+						photo: 'src/images/food/1_2.jpg',
 						info: {
 							kkal: 236,
 							b: 8,
@@ -22,10 +24,11 @@ export default {
 						}
 					},
 					{
-						name: 'Куриный брошет в итальянском маринаде',
+						name: '',
+						photo: '',
 						info: {
 							kkal: 220,
-							b: 46,
+							b: 0,
 							j: 2,
 							y: 0
 						}
@@ -33,7 +36,8 @@ export default {
 				]
 			},
 			{
-				name: 'Тефтели из индейки в томатном соусе',
+				name: 'Салат из свеклы. Куриная грудка гриль',
+				photo: 'src/images/food/1_3.jpg',
 				info: {
 					kkal: 241,
 					b: 40,
@@ -42,7 +46,8 @@ export default {
 				}
 			},
 			{
-				name: 'Томленная говядина с овощным рагу',
+				name: 'Тушеная тыква с грибами',
+				photo: 'src/images/coming_soon.jpg',
 				info: {
 					kkal: 279,
 					b: 32,
@@ -51,7 +56,8 @@ export default {
 				}
 			},
 			{
-				name: 'Филе телапии, приготовленое на пару',
+				name: 'Творожная запеканка с джемом',
+				photo: 'src/images/food/1_5.jpg',
 				info: {
 					kkal: 192,
 					b: 40,
@@ -64,7 +70,8 @@ export default {
 	'вт': {
 		menu: [
 			{
-				name: 'Каша из булгура на молоке с яблоком',
+				name: 'Морковно-тыквенный протеиновый пирог',
+				photo: 'src/images/food/2_1.jpg',
 				info: {
 					kkal: 292,
 					b: 13,
@@ -75,7 +82,8 @@ export default {
 			{
 				list: [
 					{
-						name: 'Отварная барли',
+						name: 'Овощи вареные. Куриная грудка гриль',
+						photo: 'src/images/food/2_2.jpg',
 						info: {
 							kkal: 236,
 							b: 7,
@@ -84,10 +92,11 @@ export default {
 						}
 					},
 					{
-						name: 'Куриное филе, запеченное с соусом терияки',
+						name: '',
+						photo: '',
 						info: {
-							kkal: 224,
-							b: 42,
+							kkal: 249,
+							b: 0,
 							j: 2,
 							y: 5
 						}
@@ -95,7 +104,8 @@ export default {
 				]
 			},
 			{
-				name: 'Филе судака с овощами',
+				name: 'Овощи гриль. Рыбные котлеты',
+				photo: 'src/images/food/2_3.jpg',
 				info: {
 					kkal: 187,
 					b: 38,
@@ -104,7 +114,8 @@ export default {
 				}
 			},
 			{
-				name: 'Биточки из говядины с кабачками и йогуртовым соусом',
+				name: 'Салат из сладкого перца',
+				photo: 'src/images/coming_soon.jpg',
 				info: {
 					kkal: 262,
 					b: 40,
@@ -113,7 +124,8 @@ export default {
 				}
 			},
 			{
-				name: 'Запеканка из обезжиренного творога',
+				name: 'Сырники с джемом',
+				photo: 'src/images/food/2_5.jpg',
 				info: {
 					kkal: 274,
 					b: 19,
@@ -126,38 +138,42 @@ export default {
 	'ср': {
 		menu: [
 			{
-				name: 'Панкейки из гречневой муки',
+				name: 'Блинчики с мясом',
+				photo: 'src/images/food/3_1.jpg',
 				info: {
 					kkal: 301,
 					b: 9,
-					j: 7,
+					j: 0,
 					y: 57
 				}
 			},
 			{
 				list: [
 					{
-						name: 'Кус-Кус с зеленью и оливковым маслом',
+						name: 'Бурый рис отварной. Курица терияки',
+						photo: 'src/images/food/3_2.jpg',
 						info: {
-							kkal: 239,
+							kkal: 222,
 							b: 4,
-							j: 3,
+							j: 0,
 							y: 46
 						}
 					},
 					{
-						name: 'Шашлычки из индейки с соусом карри',
+						name: '',
+						photo: '',
 						info: {
 							kkal: 251,
-							b: 44,
-							j: 2,
+							b: 0,
+							j: 1,
 							y: 5
 						}
 					}
 				]
 			},
 			{
-				name: 'Куриное филе в кисло-сладком соусе',
+				name: 'Овощи гриль. Гуляш из курицы',
+				photo: 'src/images/food/3_3.jpg',
 				info: {
 					kkal: 231,
 					b: 42,
@@ -166,7 +182,8 @@ export default {
 				}
 			},
 			{
-				name: 'Кальмар в имбирном соусе',
+				name: 'Весенний салат',
+				photo: 'src/images/coming_soon.jpg',
 				info: {
 					kkal: 214,
 					b: 34,
@@ -175,7 +192,8 @@ export default {
 				}
 			},
 			{
-				name: 'Говядина в томатном соусе',
+				name: 'Творожная запеканка с изюмом',
+				photo: 'src/images/food/3_5.jpg',
 				info: {
 					kkal: 281,
 					b: 30,
@@ -188,7 +206,8 @@ export default {
 	'чт': {
 		menu: [
 			{
-				name: 'Пшенная каша на молоке с запеченной тыквой',
+				name: 'Морковно-тыквенный протеиновый пирог',
+				photo: 'src/images/food/4_1.jpg',
 				info: {
 					kkal: 267,
 					b: 11,
@@ -199,7 +218,8 @@ export default {
 			{
 				list: [
 					{
-						name: 'Пенне с зеленью',
+						name: 'Салат "Витаминный". Куриная грудка гриль',
+						photo: 'src/images/food/4_2.jpg',
 						info: {
 							kkal: 236,
 							b: 8,
@@ -208,10 +228,11 @@ export default {
 						}
 					},
 					{
-						name: 'Куриное филе в томатном соусе с кабачками и зеленью',
+						name: '',
+						photo: '',
 						info: {
-							kkal: 220,
-							b: 42,
+							kkal: 276,
+							b: 0,
 							j: 2,
 							y: 5
 						}
@@ -219,7 +240,8 @@ export default {
 				]
 			},
 			{
-				name: 'Фрикассе из индейки в розмариновом соусе',
+				name: 'Салат. Рыбные котлеты',
+				photo: 'src/images/food/4_3.jpg',
 				info: {
 					kkal: 235,
 					b: 38,
@@ -228,7 +250,8 @@ export default {
 				}
 			},
 			{
-				name: 'Мит Лоуф с грибами',
+				name: 'Запеченные баклажаны',
+				photo: 'src/images/coming_soon.jpg',
 				info: {
 					kkal: 278,
 					b: 38,
@@ -237,7 +260,8 @@ export default {
 				}
 			},
 			{
-				name: 'Филе хека с морковным маринадом',
+				name: 'Творожно-фруктовое суфле',
+				photo: 'src/images/food/4_5.jpg',
 				info: {
 					kkal: 208,
 					b: 39,
@@ -250,9 +274,10 @@ export default {
 	'пт': {
 		menu: [
 			{
-				name: 'Каша из геркулеса с курагой',
+				name: 'Блинчики с мясом',
+				photo: 'src/images/food/5_1.jpg',
 				info: {
-					kkal: 310,
+					kkal: 347,
 					b: 10,
 					j: 3,
 					y: 59
@@ -261,7 +286,8 @@ export default {
 			{
 				list: [
 					{
-						name: 'Рассыпчатая гречка с зеленью',
+						name: 'Овощи гриль. Курица гриль',
+						photo: 'src/images/food/5_2.jpg',
 						info: {
 							kkal: 233,
 							b: 8,
@@ -270,18 +296,20 @@ export default {
 						}
 					},
 					{
-						name: 'Котлеты из говядины с мясным соусом',
+						name: '',
+						photo: '',
 						info: {
 							kkal: 281,
-							b: 38,
-							j: 13,
+							b: 0,
+							j: 1,
 							y: 2.5
 						}
 					}
 				]
 			},
 			{
-				name: 'Филе телапии под сливочном соусом',
+				name: 'Цветная капуста, брокколи. Котлеты куриные на пару',
+				photo: 'src/images/coming_soon.jpg',
 				info: {
 					kkal: 198,
 					b: 34,
@@ -290,7 +318,8 @@ export default {
 				}
 			},
 			{
-				name: 'Рулет из индейки с йогуртовым соусом',
+				name: 'Салат с маслинами',
+				photo: 'src/images/coming_soon.jpg',
 				info: {
 					kkal: 238,
 					b: 47,
@@ -299,7 +328,8 @@ export default {
 				}
 			},
 			{
-				name: 'Обезжиренный творог с джемом',
+				name: 'Сырники с изюмом и джемом',
+				photo: 'src/images/food/5_5.jpg',
 				info: {
 					kkal: 203,
 					b: 32,
@@ -312,7 +342,8 @@ export default {
 	'сб': {
 		menu: [
 			{
-				name: 'Миндальные панкейки с ягодным джемом',
+				name: 'Печеное яблоко',
+				photo: 'src/images/food/6_1.jpg',
 				info: {
 					kkal: 347,
 					b: 9,
@@ -323,7 +354,8 @@ export default {
 			{
 				list: [
 					{
-						name: 'Булгур с грибами',
+						name: 'Салат "Цезарь"',
+						photo: 'src/images/food/.jpg',
 						info: {
 							kkal: 236,
 							b: 9,
@@ -332,10 +364,11 @@ export default {
 						}
 					},
 					{
-						name: 'Куриное филе в горчично - йогуртовом маринаде',
+						name: '',
+						photo: 'src/images/food/.jpg',
 						info: {
-							kkal: 228,
-							b: 42,
+							kkal: 247,
+							b: 0,
 							j: 3,
 							y: 4
 						}
@@ -343,7 +376,8 @@ export default {
 				]
 			},
 			{
-				name: 'Биточки из филе индейки с грибами',
+				name: 'Овощная смесь на пару. Азу из индейки',
+				photo: 'src/images/food/.jpg',
 				info: {
 					kkal: 216,
 					b: 38,
@@ -352,7 +386,8 @@ export default {
 				}
 			},
 			{
-				name: 'Говядина в пряном соусе',
+				name: 'Печеный судак',
+				photo: 'src/images/food/.jpg',
 				info: {
 					kkal: 262,
 					b: 38,
@@ -361,7 +396,8 @@ export default {
 				}
 			},
 			{
-				name: 'Филе лосося под шпинатным соусом',
+				name: 'Творожная запеканка с фруктами',
+				photo: 'src/images/food/.jpg',
 				info: {
 					kkal: 192,
 					b: 34,
@@ -374,7 +410,8 @@ export default {
 	'вс': {
 		menu: [
 			{
-				name: 'Гречневая каша с грецким орехом',
+				name: 'Блинчики с творогом',
+				photo: 'src/images/food/.jpg',
 				info: {
 					kkal: 314,
 					b: 12,
@@ -385,7 +422,8 @@ export default {
 			{
 				list: [
 					{
-						name: 'Отварной рис Басмати',
+						name: 'Куриные митболы с чечевицей под соусом том ям',
+						photo: 'src/images/food/.jpg',
 						info: {
 							kkal: 218,
 							b: 4,
@@ -394,10 +432,11 @@ export default {
 						}
 					},
 					{
-						name: 'Рулет из индейки с кабачком и клюквенным соусом',
+						name: '',
+						photo: 'src/images/food/.jpg',
 						info: {
-							kkal: 245,
-							b: 48,
+							kkal: 215,
+							b: 0,
 							j: 1,
 							y: 10
 						}
@@ -405,7 +444,8 @@ export default {
 				]
 			},
 			{
-				name: 'Тефтели из говядины в томатном соусе',
+				name: 'Красная фасоль. Куриный стейк с помидорчиком',
+				photo: 'src/images/food/.jpg',
 				info: {
 					kkal: 282,
 					b: 36,
@@ -414,7 +454,8 @@ export default {
 				}
 			},
 			{
-				name: 'Биточки из куриного филе с кабачком',
+				name: 'Жаренные овощи с сыром',
+				photo: 'src/images/food/.jpg',
 				info: {
 					kkal: 207,
 					b: 44,
@@ -423,7 +464,8 @@ export default {
 				}
 			},
 			{
-				name: 'Сырники из обезжиренного творога',
+				name: 'Сырники с джемом',
+				photo: 'src/images/food/.jpg',
 				info: {
 					kkal: 264,
 					b: 18,

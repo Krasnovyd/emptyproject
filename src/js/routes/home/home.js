@@ -8,7 +8,7 @@ export default class Home extends Component {
 					<div className='home--header container d-flex justify-content-center'>
 						<div className='col-lg-10 col-md-12'>
 							<h1>Здоровое питание каждый день</h1>
-							<p>От 299грн</p>
+							<p>От 160грн</p>
 							<button className='home--order' data-toggle='modal' data-target='#order'>
 								Попробовать программу
 							</button>
